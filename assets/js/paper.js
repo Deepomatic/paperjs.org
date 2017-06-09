@@ -13080,6 +13080,7 @@ var Key = new function() {
 
 	function getKey(event) {
 		var key = event.key || event.keyIdentifier;
+		if (key == null) return '';
 		key = /^U\+/.test(key)
 				? String.fromCharCode(parseInt(key.substr(2), 16))
 				: /^Arrow[A-Z]/.test(key) ? key.substr(5)
